@@ -17,7 +17,9 @@ main = sandbox
 
 
 -- Model
-type Msg = Increment
+type Msg
+  = Increment
+  | Decrement
 
 type alias Model = Int
 
@@ -28,15 +30,19 @@ view model =
   div [class "text-center"]
     [
       div [] [ text (String.fromInt model)],
-      button
-        [class "btn btn-primary", onClick Increment]
-        [text "+"]
+      div [class "btn-group"]
+        [
+          button [class "btn btn-primary", onClick Increment] [text "+"],
+          button [class "btn btn-danger", onClick Decrement] [text "-"]
+        ]
     ]
 
 
--- Update
+--  Update
 update : Msg -> Model -> Model
 update msg model =
   case msg of
     Increment ->
       model + 1
+    Decrement ->
+      model - 1
