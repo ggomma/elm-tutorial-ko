@@ -39,10 +39,7 @@ type alias Model =
 -- Init
 init : () -> ( Model, Cmd Msg )
 init _ =
-  ( { text = ""
-    , todos = ["ABC", "DEF"]
-    , editing = Nothing
-    }
+  ( Model "" [ "ABC", "DEF" ] Nothing
   , Cmd.none
   )
 
