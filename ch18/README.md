@@ -68,6 +68,10 @@
           )
     ```
 
+    그럼 여기서 이런 질문이 생길 수 있습니다. *'왜 굳이 Cmd를 반환해서 javascript에서 random을 처리하게 하나요?'* 이는 elm이 pure functional programming 언어이기 때문입니다.
+    
+    pure functional programming 에서는 *동일한 input에 대해서 동일한 output*을 만들어내야 합니다. 하지만 random의 경우 input이 동일하더라도 다른 output이 나올 수 밖에 없습니다. 그래서 pure functional programming 언어인 elm에서는 이 random 함수를 생성만 하고 실제 처리는 javascript에서 처리하게 하는 방식으로 pure functional programming 개념을 구현하였습니다.
+
 2. List.filter
 
     `List.filter`는 입력받은 리스트에서 특정 조건을 만족하는 요소들을 뽑아 리스트를 재구성하는 역할을 수행합니다. 
